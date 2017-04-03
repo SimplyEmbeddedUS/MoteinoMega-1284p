@@ -1,0 +1,43 @@
+##############################################################
+Moteino.name=Moteino
+Moteino.upload.tool=arduino:avrdude
+Moteino.upload.protocol=arduino
+Moteino.upload.maximum_size=31744
+Moteino.upload.speed=115200
+Moteino.bootloader.low_fuses=0xDE
+Moteino.bootloader.high_fuses=0xDC
+Moteino.bootloader.extended_fuses=0xFD
+Moteino.bootloader.path=Moteino/DualOptiboot_V5.0_atmega328_BlinkD9.hex
+Moteino.bootloader.unlock_bits=0x3F
+Moteino.bootloader.lock_bits=0xCF
+Moteino.build.mcu=atmega328p
+Moteino.build.f_cpu=16000000L
+Moteino.build.core=arduino:arduino
+Moteino.build.variant=arduino:standard
+Moteino.build.board=AVR_MOTEINO
+##############################################################
+MoteinoMEGA.name=MoteinoMEGA
+MoteinoMEGA.upload.tool=arduino:avrdude
+MoteinoMEGA.upload.maximum_size=130048
+MoteinoMEGA.upload.maximum_data_size=16384
+# MoteinoMEGA bootloader hardcoded for 115200 baud for 16MHz CPU
+# Need to scale serial communication by 10/16 for 10MHz low-voltage operation
+# Arduino IDE will warn of non-standard baud rate, this is OK.
+MoteinoMEGA.upload.speed=72000
+MoteinoMEGA.upload.protocol=arduino
+MoteinoMEGA.bootloader.tool=arduino:avrdude
+MoteinoMEGA.bootloader.low_fuses=0xDE
+MoteinoMEGA.bootloader.high_fuses=0xDE
+MoteinoMEGA.bootloader.extended_fuses=0xFD
+MoteinoMEGA.bootloader.unlock_bits=0x3F
+# Known issue to satisfy avrdude
+MoteinoMEGA.bootloader.lock_bits=0x0F
+#MoteinoMEGA.bootloader.lock_bits=0xCF
+MoteinoMEGA.bootloader.file=MoteinoMEGA/DualOptiboot_V5.0_atmega1284p_BlinkD15.hex
+MoteinoMEGA.build.mcu=atmega1284p
+# Modify frequency for 10MHz operation
+MoteinoMEGA.build.f_cpu=10000000L
+#MoteinoMEGA.build.f_cpu=16000000L
+MoteinoMEGA.build.core=arduino:arduino
+MoteinoMEGA.build.variant=MoteinoMEGA
+MoteinoMEGA.build.board=AVR_MOTEINOMEGA
